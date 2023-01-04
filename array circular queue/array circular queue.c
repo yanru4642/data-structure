@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <ctype.h>
 typedef struct {
-    int capacity; //max size of stack
+    int capacity; //max size
     int front; //preceding index of the first data
     int rear; //index of the last data
     int* elements;
@@ -24,7 +24,7 @@ int main(void){
     scanf("%d", &MAX_SIZE);
     queue1 = createQueue(MAX_SIZE);
     printf("capacity%d front%d rear%d empty?%d full?%d\n", queue1->capacity, queue1->front,queue1->rear,isEmpty(queue1), isFull(queue1));
-    //test stack
+    //test
     char status;
     char trash;
     do {
@@ -63,7 +63,7 @@ int main(void){
     printf("queue1 deleted\n");
     return 0;
 }
-//Stack function implementation
+//function implementation
 Queue* createQueue(int MAX_SIZE) {
     Queue* temp = (Queue*)malloc(sizeof(Queue));
     temp->capacity = MAX_SIZE;
