@@ -63,7 +63,7 @@ int main(void) {
         }
         //read vertices
         printf("-----------------------------------------\n");
-        printf("Enter vertices that Vertex %d connect to.\n", i);
+        printf("Enter vertices that Vertex %d connects to.\n", i);
         printf("vertices' No.(-1 to escape)> ");
         while (VERTICES_SIZE < MAX_VERTICES) {
             while (scanf("%d", &buffer) != 1 || buffer < -1 || buffer >= MAX_VERTICES) {
