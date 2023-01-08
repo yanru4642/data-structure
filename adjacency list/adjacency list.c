@@ -1,7 +1,8 @@
+/*  NOTICE: Please use C99 or C11 to compile this program.  */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
 
 //graph
 typedef struct Node* Node_ptr;
@@ -36,12 +37,12 @@ int main(void) {
     int MAX_VERTICES;
 
     //Input the number of vertices
-    printf("Enter the number of vertices> ");
+    printf("Enter the total number of vertices> ");
     while (scanf("%d", &MAX_VERTICES) != 1 || MAX_VERTICES < 1) {
         //clear buffer
         while (getchar() != '\n');
         printf("Bad input. Enter again.\n");
-        printf("Enter the number of vertices> ");
+        printf("Enter the total number of vertices> ");
     }
     while (getchar() != '\n');
 
@@ -62,15 +63,15 @@ int main(void) {
             exit(1);
         }
         //read vertices
-        printf("-----------------------------------------\n");
-        printf("Enter vertices that Vertex %d connects to.\n", i);
-        printf("vertices' No.(-1 to escape)> ");
+        printf("--------------------------------------------------------------------\n");
+        printf("Enter vertices' No. that \"Vertex %d\" connects to.(-1 to stop input)\n", i);
+        printf("vertices' No.> ");
         while (VERTICES_SIZE < MAX_VERTICES) {
             while (scanf("%d", &buffer) != 1 || buffer < -1 || buffer >= MAX_VERTICES) {
                 //clear buffer
                 while (getchar() != '\n');
                 printf("Bad input. Enter again.\n");
-                printf("Enter vertices' No.(-1 to escape)> ");
+                printf("vertices' No.(-1 to stop input)> ");
             }
             if (buffer == -1) {
                 break;
